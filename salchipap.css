@@ -32,6 +32,7 @@ body {
 .menu {
   display: flex;
   gap: 20px;
+  padding-left: 20px;
 }
 
 .menu a {
@@ -108,12 +109,17 @@ body {
 }
 
 .game-card {
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #111111;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 22px rgba(0, 0, 0, .1);
   text-align: center;
   transition: transform .3s ease;
+  border: 1px solid white;
+  color : white;
 }
 
 .game-card:hover {
@@ -136,6 +142,7 @@ body {
   font-size: 0.9rem;
   padding: 0 10px 16px;
   color: #444;
+  color: #ffffff;
 }
 
 footer {
@@ -162,16 +169,18 @@ footer {
 
 
     .btn-precio {
-      bottom: 435px;
-      left: 10px;
-      background: red;
-      font-size: 15px;
-      font-weight: bold;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-      position: relative;
-      top: 20px;
-      left: 130px;
-    }
+  margin: 15px auto;
+  background: red;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+  position: static;
+}
 
 
     .extra {
@@ -213,3 +222,90 @@ footer {
         .extra:has(~ input[type="checkbox"]:checked) {
       display: inline;
     }
+
+    
+@media (max-width: 1030px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 36px;
+  }
+
+  .hero-img img {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 28px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .game-card h2 {
+    font-size: 1rem;
+  }
+
+  .game-card p {
+    font-size: 0.85rem;
+  }
+
+  .btn-precio {
+    left: 50px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .hero-text h2 {
+    font-size: 22px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-img img {
+    max-width: 220px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  label {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
